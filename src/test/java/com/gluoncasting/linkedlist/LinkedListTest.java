@@ -94,4 +94,33 @@ public class LinkedListTest {
 		assertEquals(list.toString(), expected2);
 	}
 
+	@Test
+	public void testBubbleSort(){
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		list.insertAtHead(10);
+		list.insertAtHead(9);
+		list.insertAtHead(16);
+		list.insertAtHead(23);
+		list.insertAtHead(65);
+				
+		String expected = "9 10 16 23 65 ";
+		list.bubbleSort();
+		assertEquals(expected, list.toString());
+	}
+	
+	@Test
+	public void testInsertionSort(){
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		list.insertAtHead(10);
+		list.insertAtHead(9);
+		list.insertAtHead(16);
+		list.insertAtHead(23);
+		list.insertAtHead(65);
+				
+		String expected = "9 10 16 23 65 ";
+		list.insertionSort();
+		assertEquals(expected, list.toString());
+	}
+	
+	
 }
