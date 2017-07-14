@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gluoncasting.linkedlist.MergeLinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-07-14T01:57:15" hostname="Copper" time="0.01">
+  <properties/>
+  <testcase name="test" classname="com.gluoncasting.linkedlist.MergeLinkedListTest" time="0.01"/>
+  <system-out><![CDATA[We are inserting list2 2 4 6 8 10  into list1 1 3 5 7 9 
+
+ITERATION
+
+current merged list 1 3 5 7 9 
+list to insert into merged list 2 4 6 8 10 
+current node 1 find a home for 2
+2 is smaller than 3 and gaurenteed smaller than 1 because they are sorted
+put 1 3 5 7 9  into a bin
+append 2 4 6 8 10  to 1
+3 5 7 9  will insert next iteration
+current merged list 1 2 4 6 8 10 
+list1 2 4 6 8 10 
+list2 3 5 7 9 
+
+ITERATION
+
+current merged list 1 2 4 6 8 10 
+list to insert into merged list 3 5 7 9 
+current node 2 find a home for 3
+3 is smaller than 4 and gaurenteed smaller than 2 because they are sorted
+put 2 4 6 8 10  into a bin
+append 3 5 7 9  to 2
+4 6 8 10  will insert next iteration
+current merged list 1 2 3 5 7 9 
+list1 3 5 7 9 
+list2 4 6 8 10 
+
+ITERATION
+
+current merged list 1 2 3 5 7 9 
+list to insert into merged list 4 6 8 10 
+current node 3 find a home for 4
+4 is smaller than 5 and gaurenteed smaller than 3 because they are sorted
+put 3 5 7 9  into a bin
+append 4 6 8 10  to 3
+5 7 9  will insert next iteration
+current merged list 1 2 3 4 6 8 10 
+list1 4 6 8 10 
+list2 5 7 9 
+
+ITERATION
+
+current merged list 1 2 3 4 6 8 10 
+list to insert into merged list 5 7 9 
+current node 4 find a home for 5
+5 is smaller than 6 and gaurenteed smaller than 4 because they are sorted
+put 4 6 8 10  into a bin
+append 5 7 9  to 4
+6 8 10  will insert next iteration
+current merged list 1 2 3 4 5 7 9 
+list1 5 7 9 
+list2 6 8 10 
+
+ITERATION
+
+current merged list 1 2 3 4 5 7 9 
+list to insert into merged list 6 8 10 
+current node 5 find a home for 6
+6 is smaller than 7 and gaurenteed smaller than 5 because they are sorted
+put 5 7 9  into a bin
+append 6 8 10  to 5
+7 9  will insert next iteration
+current merged list 1 2 3 4 5 6 8 10 
+list1 6 8 10 
+list2 7 9 
+
+ITERATION
+
+current merged list 1 2 3 4 5 6 8 10 
+list to insert into merged list 7 9 
+current node 6 find a home for 7
+7 is smaller than 8 and gaurenteed smaller than 6 because they are sorted
+put 6 8 10  into a bin
+append 7 9  to 6
+8 10  will insert next iteration
+current merged list 1 2 3 4 5 6 7 9 
+list1 7 9 
+list2 8 10 
+
+ITERATION
+
+current merged list 1 2 3 4 5 6 7 9 
+list to insert into merged list 8 10 
+current node 7 find a home for 8
+8 is smaller than 9 and gaurenteed smaller than 7 because they are sorted
+put 7 9  into a bin
+append 8 10  to 7
+9  will insert next iteration
+current merged list 1 2 3 4 5 6 7 8 10 
+list1 8 10 
+list2 9 
+
+ITERATION
+
+current merged list 1 2 3 4 5 6 7 8 10 
+list to insert into merged list 9 
+current node 8 find a home for 9
+9 is smaller than 10 and gaurenteed smaller than 8 because they are sorted
+put 8 10  into a bin
+append 9  to 8
+10  will insert next iteration
+current merged list 1 2 3 4 5 6 7 8 9 
+list1 9 
+list2 10 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -8,7 +8,7 @@ package com.gluoncasting.linkedlist;
  */
 public class LinkedList<T extends Comparable<T>> {
 
-	private Node<T> head;
+	public Node head;
 	
 	/**
 	 * While iterating bubble the largest node to the tail.
@@ -26,8 +26,8 @@ public class LinkedList<T extends Comparable<T>> {
 		while (swapped == true){
 			
 			swapped = false;
-			Node<T> current = this.head;
-			Node<T> previous = null;
+			Node current = this.head;
+			Node previous = null;
 			
 			while (current.getNext() != null) {
 				if (current.getData().compareTo(current.getNext().getData()) > 0){ //if the current data is larger swap!
@@ -60,7 +60,7 @@ public class LinkedList<T extends Comparable<T>> {
 	 * Return the length of the linked list
 	 */
 	public int length(){
-		Node<T> current = this.head;
+		Node current = this.head;
 		int count = 0;
 		while (current != null){
 			current = current.getNext();
@@ -79,21 +79,21 @@ public class LinkedList<T extends Comparable<T>> {
 			return null;
 		}
 		
-		Node<T> current = this.head;
-		Node<T> previous = null;
+		Node current = this.head;
+		Node previous = null;
 		
 		//loop through each node in the list
 		while (current != null){
 			
-			Node<T> toInsert = current.getNext();
+			Node toInsert = current.getNext();
 		
 			if (previous == null ||  previous.getData().compareTo(toInsert.getData()) >= 0){ //no insertion required, just advance the sorted pointer
 				previous = current;
 				current = current.getNext();
 			}
 			else{
-				Node<T> innerPrevious = null;
-				Node<T> insertAfter = this.head;
+				Node innerPrevious = null;
+				Node insertAfter = this.head;
 				if (innerPrevious == null && toInsert.getData().compareTo(insertAfter.getData()) < 0){ //we found the new head as the to be inserted is smaller than the current head
 					current.setNext(toInsert.getNext());
 					this.head = toInsert;
@@ -131,11 +131,11 @@ public class LinkedList<T extends Comparable<T>> {
 	 */
 	public void insertAtHead(T data){
 		if (head == null){ //check for empty list by checking if the head is null
-			this.head = new Node<T>(data);
+			this.head = new Node(data);
 			return;
 		}
 		else{
-			Node<T> node = new Node<T>(data);
+			Node node = new Node(data);
 			node.setNext(this.head);
 			this.head = node;
 		}
@@ -146,14 +146,14 @@ public class LinkedList<T extends Comparable<T>> {
 	 */
 	public void insertAtTail(T data){
 		if (this.head == null ){
-			this.head = new Node<T>(data);
+			this.head = new Node(data);
 			return;
 		}
 		
-		Node<T> current = this.head;
+		Node current = this.head;
 		while ( current != null){
 			if ( current.getNext() == null ) { //found tail
-				current.setNext(new Node<T>(data));
+				current.setNext(new Node(data));
 				return;
 			}
 			current = current.getNext();
@@ -169,9 +169,9 @@ public class LinkedList<T extends Comparable<T>> {
 			return;
 		}
 		
-		Node<T> current = this.head;
-		Node<T> previous = null;
-		Node<T> next = null;
+		Node current = this.head;
+		Node previous = null;
+		Node next = null;
 		
 		while (current != null){
 			if (current.getData().equals(data)){
@@ -198,8 +198,8 @@ public class LinkedList<T extends Comparable<T>> {
 			return;
 		}
 		
-		Node<T> current = this.head;
-		Node<T> previous = null;
+		Node current = this.head;
+		Node previous = null;
 		while ( current != null){
 			if ( current.getNext() == null ) { //found tail
 				previous.setNext(null);
@@ -219,9 +219,9 @@ public class LinkedList<T extends Comparable<T>> {
 			return;
 		}
 		
-		Node<T> next = null;
-		Node<T> current = this.head;
-		Node<T> previous = null;
+		Node next = null;
+		Node current = this.head;
+		Node previous = null;
 		while (current != null){
 			next = current.getNext();
 			current.setNext(previous);
@@ -240,7 +240,7 @@ public class LinkedList<T extends Comparable<T>> {
 			return false;
 		}
 		
-		Node<T> current = this.head;
+		Node current = this.head;
 		while (current != null){
 			if (current.getData().equals(data)){
 				return true;
@@ -253,7 +253,7 @@ public class LinkedList<T extends Comparable<T>> {
 	@Override
 	public String toString(){
 		StringBuilder str = new StringBuilder();
-		Node<T> current = this.head;
+		Node current = this.head;
 		while (current != null){
 			str.append(current.getData().toString() + " ");
 			current = current.getNext();
@@ -268,22 +268,21 @@ public class LinkedList<T extends Comparable<T>> {
 	 * Inner Node Class for use in singly linked list.
 	 * @author Nikolas
 	 *
-	 * @param <T>
 	 */
-	private class Node<T extends Comparable<T>> {
+	class Node {
 		
-		private T data;
-		private Node<T> next;	
+		T data;
+		Node next;	
 		
 		public Node (T data){
 			this.data = data;
 		}
 		
-		public void setNext(Node<T> node){
+		public void setNext(Node node){
 			this.next = node;
 		}
 		
-		public Node<T> getNext(){
+		public Node getNext(){
 			return this.next;
 		}
 		
